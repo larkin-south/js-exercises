@@ -19,9 +19,24 @@ function getPlayerChoice() {
     return output;
 }
 
-// function play(playerSelection, computerSelection) {
-//     if (playerSelection == computerSelection) {
-//         console.log("TIE")
-//     } elseif (playerSelection == 1 && computerSelection == )
-// }
+function playRound(playerSelection, computerSelection) {
+    let result;
+    if (playerSelection == computerSelection) {
+        result = "TIE";
+    } else if (playerSelection == 1 && computerSelection == 2) {
+        result = "LOSE - Paper beats rock.";
+    } else if (playerSelection == 2 && computerSelection == 1) {
+        result = "WIN - Paper beats rock.";
+    } else if (playerSelection == 1 && computerSelection == 3) {
+        result = "WIN - Rock beats scissors.";
+    } else if (playerSelection == 3 && computerSelection == 1) {
+        result = "LOSE - Rock beats scissors.";
+    } else if (playerSelection == 2 && computerSelection == 3) {
+        result = "LOSE - Scissors beats paper.";
+    } else if (playerSelection == 3 && computerSelection == 2) {
+        result = "WIN - Scissors beats paper.";
+    } 
+
+    return result;
+}
 
