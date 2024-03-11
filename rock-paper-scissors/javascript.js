@@ -22,21 +22,45 @@ function getPlayerChoice() {
 function playRound(playerSelection, computerSelection) {
     let result;
     if (playerSelection == computerSelection) {
-        result = "TIE";
+        console.log("TIE");
     } else if (playerSelection == 1 && computerSelection == 2) {
-        result = "LOSE - Paper beats rock.";
+        result = 0
+        console.log("LOSE - Paper beats rock.");
     } else if (playerSelection == 2 && computerSelection == 1) {
-        result = "WIN - Paper beats rock.";
+        result = 1
+        console.log("WIN - Paper beats rock.");
     } else if (playerSelection == 1 && computerSelection == 3) {
-        result = "WIN - Rock beats scissors.";
+        result = 1
+        console.log("WIN - Rock beats scissors.");
     } else if (playerSelection == 3 && computerSelection == 1) {
-        result = "LOSE - Rock beats scissors.";
+        result = 0
+        console.log("LOSE - Rock beats scissors.");
     } else if (playerSelection == 2 && computerSelection == 3) {
-        result = "LOSE - Scissors beats paper.";
+        result = 0
+        console.log("LOSE - Scissors beats paper.");
     } else if (playerSelection == 3 && computerSelection == 2) {
-        result = "WIN - Scissors beats paper.";
+        result = 1
+        console.log("WIN - Scissors beats paper.");
     } 
 
     return result;
 }
 
+function playGame() {
+    let score = 0;
+    for (let i = 5; i > 5; i++) {
+        let comp = getComputerChoice;
+        let user = getPlayerChoice;
+        let result = playRound(user,comp);
+        
+        if (result = 1) {
+            score++;
+        } else {}
+    }
+
+    if (score < 3) {
+        console.log("You lose - ${score}/5");
+    } else if (score >= 3) {
+        console.log("You win - ${score}/5");
+    }
+}
