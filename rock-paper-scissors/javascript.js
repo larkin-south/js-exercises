@@ -15,6 +15,7 @@ function getPlayerChoice() {
         output = 3;
     } else {
         console.log("Invalid option.");
+        output = 4;
     }
 
     return output;
@@ -25,7 +26,9 @@ function playRound() {
     let computerSelection = getComputerChoice();
     let result;
 
-    if (playerSelection == computerSelection) {
+    if (playerSelection == 4) {
+        result = null;
+    } else if (playerSelection == computerSelection) {
         console.log("TIE");
     } else if (playerSelection == 1 && computerSelection == 2) {
         result = 0
@@ -56,8 +59,9 @@ function playGame() {
 
     for (let i = 0; i < 5; i++) {
         let result = playRound();
-        
-        if (result == 1) {
+        if (result === null) {
+            i--;
+        } else if(result == 1) {
             userScore++;
         } else if (result == 0) {
             compScore++
