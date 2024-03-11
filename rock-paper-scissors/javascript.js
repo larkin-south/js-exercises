@@ -1,5 +1,6 @@
 function getComputerChoice() {
     let choice = Math.ceil(Math.random() * 3);
+
     return choice;
 }
 
@@ -19,7 +20,9 @@ function getPlayerChoice() {
     return output;
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound() {
+    let playerSelection = getPlayerChoice();
+    let computerSelection = getComputerChoice();
     let result;
     if (playerSelection == computerSelection) {
         console.log("TIE");
@@ -48,10 +51,8 @@ function playRound(playerSelection, computerSelection) {
 
 function playGame() {
     let score = 0;
-    for (let i = 5; i > 5; i++) {
-        let comp = getComputerChoice;
-        let user = getPlayerChoice;
-        let result = playRound(user,comp);
+    for (let i = 0; i < 6; i++) {
+        let result = playRound();
         
         if (result = 1) {
             score++;
@@ -59,8 +60,10 @@ function playGame() {
     }
 
     if (score < 3) {
-        console.log("You lose - ${score}/5");
+        console.log("You lose - `${score}`/5");
     } else if (score >= 3) {
-        console.log("You win - ${score}/5");
+        console.log("You win - " + score + "/5");
     }
 }
+
+console.log(playGame());
