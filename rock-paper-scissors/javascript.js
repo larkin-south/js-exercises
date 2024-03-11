@@ -24,6 +24,7 @@ function playRound() {
     let playerSelection = getPlayerChoice();
     let computerSelection = getComputerChoice();
     let result;
+
     if (playerSelection == computerSelection) {
         console.log("TIE");
     } else if (playerSelection == 1 && computerSelection == 2) {
@@ -50,19 +51,25 @@ function playRound() {
 }
 
 function playGame() {
-    let score = 0;
-    for (let i = 0; i < 6; i++) {
+    let userScore = 0;
+    let compScore = 0;
+
+    for (let i = 0; i < 5; i++) {
         let result = playRound();
         
-        if (result = 1) {
-            score++;
-        } else {}
+        if (result == 1) {
+            userScore++;
+        } else if (result == 0) {
+            compScore++
+        } 
     }
 
-    if (score < 3) {
-        console.log("You lose - `${score}`/5");
-    } else if (score >= 3) {
-        console.log("You win - " + score + "/5");
+    if (userScore == compScore) {
+        return ("It's a tie - " + userScore + "-" + compScore);
+    } else if (userScore < compScore) {
+        return ("You lose - " + userScore + "-" + compScore);
+    } else if (userScore > compScore) {
+        return ("You win - " + userScore + "-" + compScore);
     }
 }
 
