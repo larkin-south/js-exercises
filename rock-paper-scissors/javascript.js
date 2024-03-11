@@ -1,6 +1,6 @@
 function getComputerChoice() {
-    let choice = Math.ceil(Math.random() * 3);
-
+    let choice = Math.floor(Math.random() * 3) + 1;
+    
     return choice;
 }
 
